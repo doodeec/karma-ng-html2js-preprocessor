@@ -1,14 +1,14 @@
 {
-  "name": "karma-ng-html2js-preprocessor",
-  "version": "0.1.2",
-  "description": "A Karma plugin. Compile AngularJS templates to JavaScript on the fly.",
+  "name": "karma-ng-require-html2js-preprocessor",
+  "version": "0.1.0",
+  "description": "A Karma plugin. Compile AngularJS templates as RequireJS modules to JavaScript on the fly.",
   "main": "lib/index.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/karma-runner/karma-ng-html2js-preprocessor.git"
+    "url": "git://github.com/doodeec/karma-ng-html2js-preprocessor.git"
   },
   "keywords": [
     "karma-plugin",
@@ -17,7 +17,7 @@
     "angular",
     "html2js"
   ],
-  "author": "Vojta Jina <vojta.jina@gmail.com>",
+  "author": "Dusan Bartos <doodeec@gmail.com>",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -32,18 +32,5 @@
   "peerDependencies": {
     "karma": ">=0.9"
   },
-  "license": "MIT",
-  "contributors": [
-    "Friedel Ziegelmayer <friedel.ziegelmayer@gmail.com>",
-    "Lukasz Bandzarewicz <lucassus@gmail.com>",
-    "BrianLenzo <brian.lenzo@gmail.com>",
-    "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
-    "Jan Dudulski <jan@dudulski.pl>",
-    "Lucas Galfasó <lgalfaso@gmail.com>",
-    "Mike Frawley <frawl021@gmail.com>",
-    "Murphy McMahon <pandeiro@gmail.com>",
-    "Pawel Kozlowski <pkozlowski.opensource@gmail.com>",
-    "Robin Roestenburg <robin@roestenburg.io>",
-    "Sahat Yalkabov <sakhat@gmail.com>"
-  ]
+  "license": "MIT"
 }

@@ -1,24 +1,34 @@
-# karma-ng-html2js-preprocessor [![Build Status](https://travis-ci.org/karma-runner/karma-ng-html2js-preprocessor.svg?branch=master)](https://travis-ci.org/karma-runner/karma-ng-html2js-preprocessor)
+# karma-ng-require-html2js-preprocessor
 
-> Preprocessor for converting HTML files to [AngularJS](http://angularjs.org/) templates.
-
-*Note:* If you are looking for a general preprocessor that is not tied to Angular, check out [karma-html2js-preprocessor](https://github.com/karma-runner/karma-html2js-preprocessor).
+> Preprocessor for converting HTML files to [AngularJS](http://angularjs.org/) templates. Template modules are served as RequireJS modules.
 
 ## Installation
 
-The easiest way is to keep `karma-ng-html2js-preprocessor` as a devDependency in your `package.json`.
+The easiest way is to keep `karma-ng-require-html2js-preprocessor` as a devDependency in your `package.json`.
 ```json
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-ng-html2js-preprocessor": "~0.1"
+    "karma-ng-require-html2js-preprocessor": "~0.1"
   }
 }
 ```
 
 You can simple do it by:
 ```bash
-npm install karma-ng-html2js-preprocessor --save-dev
+npm install karma-ng-require-html2js-preprocessor --save-dev
+```
+
+Remember to define a RequireJS path corresponding to angular source
+```js
+requirejs.config({
+    paths: {
+        'angular': "path-to-angular/angular.min",
+        ...
+    },
+    baseUrl: ...
+    shim: ...
+});
 ```
 
 ## Configuration
@@ -38,7 +48,7 @@ module.exports = function(config) {
       '**/*.html'
     ],
 
-    ngHtml2JsPreprocessor: {
+    ngRequireHtml2JsPreprocessor: {
       // strip this from the file path
       stripPrefix: 'public/',
       stripSufix: '.ext',
@@ -68,16 +78,14 @@ For instance this `template.html`...
 ```
 ... will be served as `template.html.js`:
 ```js
-angular.module('template.html', []).config(function($templateCache) {
-  $templateCache.put('template.html', '<div>something</div>');
+define(['angular'], function() {
+  angular.module('template.html', []).config(function($templateCache) {
+    $templateCache.put('template.html', '<div>something</div>');
+  });
 });
 ```
 
-See the [ng-directive-testing](https://github.com/vojtajina/ng-directive-testing) for a complete example.
-
-----
-
-For more information on Karma see the [homepage].
+For any query contact me via [email].
 
 
-[homepage]: http://karma-runner.github.com
+[email]: mailto:doodeec@gmail.com
